@@ -1,0 +1,86 @@
+code with chatgpt 5.2, 13.12.2025
+
+process:
+open cmd in projects parent folder.
+npm create vite@latest portfolio1 (select react, javascript)
+npm create vite@latest portfolio1 -- --template react
+cd portfolio1
+npm install
+npm install tailwindcss @tailwindcss/vite  ---(installed tailwind v4.1.18)
+npm install swiper react-icons
+
+vite.config.js:
+---
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+})
+---
+overwrite index.css with '@import "tailwindcss";' and import in main.jsx
+
+npm run dev
+- runs server at: http://localhost:5173/
+
+check if tailwind running: <p className='text-3xl bg-green-200'>Hello world</p>
+
+============
+project structure:
+
+portfolio1/
+├─ index.html
+├─ public/ ...
+├─ src/
+│  ├─ main.jsx
+│  ├─ App.jsx
+│  ├─ index.css
+│  ├─ data/
+│  │  └─ projects.js
+│  └─ components/
+│     ├─ Header.jsx
+│     ├─ Hero.jsx
+|     ├─ Skills.jsx
+|	  ├─ Certificates.jsx
+│     ├─ CompetitiveProfiles.jsx
+│     ├─ Projects.jsx
+│     ├─ ProjectCard.jsx
+│     ├─ ProjectModal.jsx
+│     ├─ Contact.jsx
+│     └─ Footer.jsx
+└─ netlify.toml  (optional)
+
+==============================================
+how use poppins font without google link.
+download poppins font.
+go to https://transfonter.org/
+add font poppins-regular.ttf -> convert to woff2
+download
+keep it in public/fonts/poppins-regular.woff2
+
+use the font-face provided by transfonter, in css file or in style tag in head.
+@font-face {
+    font-family: 'Poppins';
+    src: url('Poppins-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+-
+check if the font loaded: instect > network > font > refresh page
+see if Poppins-Regular.woff2 loaded: status code: 200 ok
+
+
+----
+github upload:
+create public repository in github: portfolio1_anup
+open cmd in project root:
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/anup30/portfolio1_anup.git
+git push -u origin main
+---
+
