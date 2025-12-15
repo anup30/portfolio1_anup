@@ -83,4 +83,8 @@ git branch -M main
 git remote add origin https://github.com/anup30/portfolio1_anup.git
 git push -u origin main
 ---
-
+// after change
+git add .
+git commit -m "v1.0"
+git push -u origin main
+---
