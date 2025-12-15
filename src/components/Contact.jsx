@@ -21,7 +21,17 @@ export default function Contact(){
               method="POST"
               data-netlify="true"
               netlify-honeypot="bot-field"
-              onSubmit={() => setSubmitted(true)}
+              //onSubmit={() => setSubmitted(true)}
+              onSubmit={(e) => {
+              e.preventDefault();  
+              fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(new FormData(e.target)).toString()
+              })
+                .then(() => setSubmitted(true))
+                .catch((error) => alert("Error submitting form"));
+            }}
               className="bg-white/50 border border-gray-500 p-6 rounded"
             >
               {/* required for Netlify */}

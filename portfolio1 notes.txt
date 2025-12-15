@@ -88,3 +88,9 @@ git add .
 git commit -m "v1.0"
 git push -u origin main
 ---
+
+netlify live: https://poetic-capybara-c06d3b.netlify.app/  // using anup30coc@gmail.com
+
+message at:
+Thanks — message submitted!
+Netlify will capture and show your message in the site admin / forms dashboard.
