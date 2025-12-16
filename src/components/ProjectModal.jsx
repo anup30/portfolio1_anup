@@ -33,22 +33,33 @@ export default function ProjectModal({ project, onClose }) {
             pagination={{ clickable: true }}
             slidesPerView={1}
             spaceBetween={16}
-            className="w-full pb-10"
+            className="w-full h-[70vh]"
           >
             {(project.images || []).map((src, idx) => (
-              <SwiperSlide key={idx}>
-                <div className="flex items-center justify-center h-[70vh]">
-                  <a href={src} target="_blank" rel="noopener noreferrer">
-                    <img
-                      src={src}
-                      alt={`${project.title}-${idx}`}
-                      className="max-h-full max-w-full object-contain bg-gray-100 rounded cursor-zoom-in"
-                    />
-                  </a>
-                </div>
+              <SwiperSlide key={idx} className="flex items-center justify-center">
+                <a
+                  href={src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-full flex items-center justify-center"
+                >
+                  <img
+                    src={src}
+                    alt={`${project.title}-${idx}`}
+                    className="
+                      max-w-full
+                      max-h-full
+                      object-contain
+                      rounded
+                      bg-gray-100
+                      cursor-zoom-in
+                    "
+                  />
+                </a>
               </SwiperSlide>
             ))}
           </Swiper>
+
 
           {/* Description as list */}
           <div className="mt-4">
