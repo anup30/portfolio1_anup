@@ -4,7 +4,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination'; 
+import 'swiper/css/pagination';
 
 export default function ProjectModal({ project, onClose }) {
   if (!project) return null;
@@ -28,34 +28,21 @@ export default function ProjectModal({ project, onClose }) {
         <div className="p-4 flex-1 overflow-auto">
 
           <Swiper
-            // 3. Add Pagination to modules and enable it
             modules={[Navigation, Pagination]}
             navigation
-            pagination={{ clickable: true }} 
+            pagination={{ clickable: true }}
             slidesPerView={1}
             spaceBetween={16}
-            className="w-full pb-10" // Added pb-10 to give space for the dots at the bottom
+            className="w-full pb-10"
           >
             {(project.images || []).map((src, idx) => (
               <SwiperSlide key={idx}>
-                {/* Reduced height slightly to 70vh to ensure dots fit on screen */}
                 <div className="flex items-center justify-center h-[70vh]">
-                  <a
-                    href={src}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                  <a href={src} target="_blank" rel="noopener noreferrer">
                     <img
                       src={src}
                       alt={`${project.title}-${idx}`}
-                      className="
-                        max-h-full
-                        max-w-full
-                        object-contain
-                        bg-gray-100
-                        rounded
-                        cursor-zoom-in
-                      "
+                      className="max-h-full max-w-full object-contain bg-gray-100 rounded cursor-zoom-in"
                     />
                   </a>
                 </div>
@@ -63,28 +50,26 @@ export default function ProjectModal({ project, onClose }) {
             ))}
           </Swiper>
 
-          {/* Description */}
+          {/* Description as list */}
           <div className="mt-4">
-            <p className="text-sm text-gray-700">
-              {project.description}
-            </p>
+            <ul className="list-disc pl-5 space-y-1 text-sm text-gray-700">
+              {(project.description || []).map((line, idx) => (
+                <li key={idx}>{line}</li>
+              ))}
+            </ul>
 
-            <p className="mt-2 text-xs">
-              Stack: <strong>{project.stack}</strong>
+            <p className="mt-3 text-xs">
+              Tags: {(project.tags || []).join(', ')}
             </p>
 
             <div className="mt-3 flex gap-4">
               {project.github && (
-                <a href={project.github} target="_blank" className="underline text-sm text-blue-600">
-                  GitHub
-                </a>
+                <a href={project.github} target="_blank" className="underline text-sm text-blue-600">GitHub</a>
               )}
               {project.live && (
-                <a href={project.live} target="_blank" className="underline text-sm text-blue-600">
-                  Live Demo
-                </a>
+                <a href={project.live} target="_blank" className="underline text-sm text-blue-600">Live Demo</a>
               )}
-              
+
               {project.api_github && (
                 <a href={project.api_github} target="_blank" rel="noopener noreferrer" className="underline text-sm text-blue-600">api GitHub</a>
               )}
@@ -97,7 +82,6 @@ export default function ProjectModal({ project, onClose }) {
               {project.frontend_live && (
                 <a href={project.frontend_live} target="_blank" rel="noopener noreferrer" className="underline text-sm text-blue-600">frontend live</a>
               )}
-
             </div>
           </div>
 
