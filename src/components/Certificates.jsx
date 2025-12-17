@@ -12,7 +12,7 @@ const certificates = [
     title: 'Django Web Development',
     issuer: 'Ostad',
     file: '/resources/certificates/ostad_python_django_react 3-A31399.pdf',
-	gradient: 'bg-gradient-to-r from-slate-400 to-sky-400/50'
+	gradient: 'bg-gradient-to-r from-purple-200/50 to-sky-400/50'
   },
   {
     title: 'CSE & DSA fundamentals with C, C++, and python react web development',
