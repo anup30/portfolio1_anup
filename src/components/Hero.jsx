@@ -11,7 +11,7 @@ export default function Hero(){
             Full-stack web & mobile developer. Proficient in Django, FastAPI, React and Flutter. Problem solver with strong CS fundamentals.
           </p>
           <p className="text-sm">
-            <a href="/resources/resume Anup Barua.pdf" target="_blank" rel="noopener noreferrer"
+            <a href="/resources/resume_Anup_Barua.pdf" target="_blank" rel="noopener noreferrer"
                className="inline-block mt-3 px-4 py-2 border border-brand-500 rounded-md text-sm hover:bg-brand-50">
               Download Resume (pdf)
             </a>
@@ -31,7 +31,7 @@ export default function Hero(){
         </div>
 
         <div className="mx-auto">
-          <img src="/resources/anup_pic.png" alt="Anup" className="w-44 h-44 rounded-full object-cover shadow-md" />
+          <img src="/resources/anup_200px.png" alt="Anup" className="w-44 h-44 rounded-full object-cover shadow-md" />
         </div>
       </div>
     </section>

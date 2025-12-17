@@ -5,17 +5,20 @@ const certificates = [
   {
     title: 'Flutter Development',
     issuer: 'Ostad',
-    file: '/resources/certificates/ostad_flutter 5-A14855.pdf'
+    file: '/resources/certificates/ostad_flutter 5-A14855.pdf',
+	gradient: 'bg-gradient-to-r from-pink-200/50 to-slate-400'
   },
   {
     title: 'Django Web Development',
     issuer: 'Ostad',
-    file: '/resources/certificates/ostad_python_django_react 3-A31399.pdf'
+    file: '/resources/certificates/ostad_python_django_react 3-A31399.pdf',
+	gradient: 'bg-gradient-to-r from-slate-400 to-sky-400/50'
   },
   {
     title: 'CSE & DSA fundamentals with C, C++, and python react web development',
     issuer: 'Phitron',
-    file: '/resources/certificates/phitron cse fundamentsls.pdf'
+    file: '/resources/certificates/phitron cse fundamentsls.pdf',
+	gradient: 'bg-gradient-to-r from-sky-400/50 to-purple-400/50'
   }
 ];
 
@@ -44,19 +47,21 @@ export default function Certificates() {
           <button
             key={cert.title}
             onClick={() => setActiveCert(cert)}
-            className="
+            className={`
               text-left
               w-64 p-4
-              bg-white/50 border border-gray-500 rounded-lg
+              ${cert.gradient}
+              border-gray-400 rounded-lg
               shadow-sm hover:shadow-md
-              transition
-            "
+              transition				
+            `}
+
           >
             <h3 className="font-semibold text-sm">{cert.title}</h3>
             <p className="text-xs text-gray-600 mt-1">
               {cert.issuer}
             </p>
-            <span className="text-xs underline mt-2 inline-block">
+            <span className="text-xs underline mt-2 inline-block hover: cursor-pointer">
               View Certificate
             </span>
           </button>

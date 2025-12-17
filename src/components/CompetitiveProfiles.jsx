@@ -42,7 +42,7 @@ export default function CompetitiveProfiles() {
             className="
               flex items-center gap-3
               w-64 p-4
-              bg-white/50 border border-gray-500 rounded-lg
+              bg-blue-100/50 border border-gray-400 rounded-lg
               shadow-sm hover:shadow-md
               transition
             "
